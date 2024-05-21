@@ -1,0 +1,11 @@
+webpack/*
+**/__tests__
+dist
+src/config.js
+
+src/utils/plugins
+plugins-off
+plugins.off
+tmp
+!tmp/.gitkeep
+codeshifts

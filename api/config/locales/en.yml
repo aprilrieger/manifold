@@ -1,0 +1,107 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  attributes:
+    descriptions:
+      slug: "A unique identifier that the user requests. It will be set to the pendingSlug or the title if it is not already taken."
+      pending_slug: "The unique identifier that the user requests. It may or may not be available, in which case, characters will be appended to make it unique"
+      avatar_meta: "A hash with data about the avatar image"
+  swagger:
+    access_denied: "	The API key doesn't have permissions to perform the request."
+    not_authenticated: "Valid API key was not provided."
+    not_found: "The requested resource doesn't exist."
+    unprocessable: "Something went wrong on Manifold's end."
+    index:
+      summary: "List all %{type}"
+      summary_with_parent: "List %{parent_article} %{parent_possessive} %{type}"
+      success: "Returns an array of %{type} resources."
+    show:
+      summary: "Retrieve %{article} %{type}"
+      summary_with_parent: "Retrieve %{article} %{type} for %{parent_article} %{parent}"
+      success: "Retrieve %{article} %{type}."
+    create:
+      summary: "Create %{article} %{type}"
+      summary_with_parent: "Create %{article} %{type} for %{parent_article} %{parent}"
+      success: "Returns the %{type} resource."
+    update:
+      summary: "Update %{article} %{type}"
+      summary_with_parent: "Update %{parent_article} %{parent_possessive} %{type}"
+      success: "Returns the updated %{type} resource."
+    destroy:
+      summary: "Delete %{article} %{type}"
+      summary_with_parent: "Delete %{parent_article} %{parent_possessive} %{type}"
+      success: "Removes the %{type} resource."
+  active_interaction:
+    errors:
+      messages:
+        invalid: dilavni si
+  activerecord:
+    attributes:
+    errors:
+      messages:
+        public_reading_groups_disabled: "Public reading groups are disabled"
+        spam: is spam
+      models:
+        resource:
+          attributes:
+            external_id:
+              missing: "^Video ID cannot be blank."
+        page:
+          attributes:
+            purpose:
+              in_use: "cannot be assigned to more than one page"
+        resource_import:
+          attributes:
+            url:
+              blank: "for the google sheet should not be blank. Please upload a valid CSV file or enter a public Google sheet URL"
+            source:
+              inclusion: "data is not valid. Please upload a valid CSV file or enter a public Google sheet URL"
+  classy_enum:
+    user_classification:
+      anonymous: "Anonymous"
+      command_line: "CLI"
+  controllers:
+    errors:
+      project_exportation:
+        failed: "^Unable to initiate project export. Select location and try again."
+      auth_timeout:
+        title: "Authentication expired"
+        detail: "Your login session has expired. Please reauthenticate."
+      unauthorized:
+        title: "Authentication required"
+        detail: "You must be logged in to access this resource."
+      not_found:
+        title: "Resource not found"
+        detail: "Manifold attempted to access an API endpoint that does not exist."
+      bad_request:
+        title: "Bad Request"
+        detail: "The request was invalid."
+      forbidden_generic:
+        title: "Access denied"
+        detail: "You are not authorized to access this resource."
+      forbidden:
+        class:
+          title: "%{action} failed"
+          detail: "You are not authorized to %{action} %{resource}."
+        instance:
+          title: "%{action} failed"
+          detail: "You are not authorized to %{action} %{resource}."

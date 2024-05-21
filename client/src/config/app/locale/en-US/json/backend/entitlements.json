@@ -1,0 +1,51 @@
+{
+  "entitlements": {
+    "expires": "Expires {{val, datetime}}",
+    "header": "{{ entity }} Entitlements",
+    "instructions_project": "<0>Entitlements give users and/or reading groups access to this project. In Manifold, all projects are open by default. Enable access restrictions below to limit access to your project.</0><2/><0>ID for CSV entitlement imports:</0></2><1>{{gid}}</1>",
+    "instructions_journal": "<0>Journal entitlements give users and/or reading groups access to all of this journal's issues. You can also configure access to individual issues by granting entitlements on an issue's project.</0><2/><0>ID for CSV entitlement imports:</0></2><1>{{gid}}</1>",
+    "button_label": "Grant Entitlement",
+    "new": {
+      "header": "Grant Entitlement",
+      "user_select_label": "Who is the entitlement for?",
+      "user_select_placeholder": "Select a User or Reading Group",
+      "expiration_label": "Expiration",
+      "expiration_instructions": "Enter YYYY/MM/DD or a human-readable string, e.g. 'in one year'",
+      "submit_label": "Save Entitlement"
+    },
+    "pending": {
+      "header": "Manage Pending Entitlements",
+      "add_button_label": "Add Entitlement",
+      "add_header": "Add Pending Entitlement",
+      "add_instructions": "Create an entitlement for a user who has not yet created an account on this Manifold instance. When the user registers, this entitlement will be automatically added to their account.",
+      "edit_header": "Edit Pending Entitlement",
+      "user_group_label": "User Details",
+      "email": "Email",
+      "email_instructions": "Email address is used to match newly created accounts to pending entitlements.",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "entitlement_group_label": "Entitlement Details",
+      "type_label": "Type",
+      "type_instructions": "Is this entitlement for a project or a journal?",
+      "entity_id": "Project or Journal ID",
+      "id_instructions": "The ID of the project or journal that this is an entitlement to. This ID can be found in the project's url.",
+      "id_placeholder": "00000000-0000-0000-0000-00000000",
+      "expiration": "Expiration",
+      "expiration_instructions": "Optionally, set the expiration date for this entitlement.",
+      "save_label": "Save Entitlement",
+      "import_button_label": "Import from CSV",
+      "import_header": "Entitlement CSV Import",
+      "upload_label": "Upload a CSV",
+      "upload_instructions": "Manifold can import entitlements from a CSV file, including pending entitlements for not yet registered users. See the documentation for CSV format.",
+      "name_label": "Name",
+      "name_instructions": "Optionally, give the import a name for later reference.",
+      "submit_label": "Import"
+    },
+    "imports": {
+      "header": "Entitlement CSV Imports",
+      "view_pending_label": "View Pending Entitlements",
+      "view_imports_label": "View CSV Imports",
+      "results_header": "Results:"
+    }
+  }
+}

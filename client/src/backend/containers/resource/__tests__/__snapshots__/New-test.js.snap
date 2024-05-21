@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`backend/containers/resource/New matches the snapshot when rendered 1`] = `""`;

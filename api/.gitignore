@@ -1,0 +1,37 @@
+### Bundler Config ###
+.bundle
+
+### Logs and Temp Files ###
+log/*
+tmp/*
+!tmp/pids/.keep
+!log/.keep
+!tmp/.keep
+npm-debug.log
+
+### IntelliJ ###
+*.iml
+.idea
+
+# File-based project format:
+*.ipr
+*.iws
+
+### Ignore user content ###
+public/system
+./epubs
+
+### Ignore yardoc ###
+.yardoc
+doc
+.rakeTasks
+.generators
+/.rspec-local
+
+config/oauth.yml
+data/*
+!data/.gitkeep
+examples.txt
+.rspec-local
+
+coverage

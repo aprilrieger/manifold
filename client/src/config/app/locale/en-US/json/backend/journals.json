@@ -1,0 +1,92 @@
+{
+  "journals": {
+    "header": "Manage Journals",
+    "add_button_label": "Add New Journal",
+    "unauthorized": "You are not allowed to manage journals.",
+    "unauthorized_edit": "You are not allowed to edit this journal.",
+    "settings": "Journal Settings",
+    "volume_number": "Volume {{volNum}}",
+    "issue_number": "Issue {{issNum}}",
+    "volume_issue_number": "Vol., {{volNum}}, No., {{issNum}}",
+    "forms": {
+      "new_header": "New Journal",
+      "new_instructions": "Enter the name of your journal, and a brief description. Press save to continue.",
+      "title_descript_label": "Title and Description",
+      "title_label": "Title",
+      "title_placeholder": "Enter Journal Title",
+      "subtitle_label": "Subtitle",
+      "subtitle_placeholder": "Enter Journal Subtitle",
+      "descript_label": "Brief Description",
+      "submit_label": "Save and Continue",
+      "logo": "Logo",
+      "logo_instructions": "If a logo is set for the journal, it will appear vertically and horizontally centered over the hero.",
+      "logo_alt_label": "Logo Alt Text",
+      "properties": {
+        "header": "Properties",
+        "slug_label": "Slug",
+        "slug_placeholder": "Enter Journal Slug",
+        "presentation_header": "Presentation",
+        "draft_mode_label": "Draft Mode",
+        "draft_mode_instructions": "A draft project is only visible to users who are able to modify it.",
+        "show_home_label": "Show on Home Page",
+        "show_home_instructions": "If selected, this journal will be highlighted on the home page.",
+        "homepage_priority_label": "Home Page Priority",
+        "homepage_priority_instructions": "Journals with a higher number will display first on the home page.",
+        "social_header": "Social",
+        "social_card_label": "Social Card Title",
+        "social_card_placeholder": "Optionally, Enter a Social Card Title",
+        "social_descript_label": "Social Card Description",
+        "social_descript_placeholder": "Optionally, Enter a Social Card Description",
+        "social_image_label": "Social Card Image",
+        "taxonomy_header": "Taxonomy",
+        "subjects_label": "Subjects",
+        "subjects_placeholder": "Select a Subject",
+        "tags_label": "Tags",
+        "tags_placeholder": "Enter Tags",
+        "save": "Save Journal"
+      }
+    }
+  },
+  "issues": {
+    "header": "Manage Issues",
+    "add_button_label": "Add New Issue",
+    "instructions": "Manage the journal's issues from this screen. Each issue references a Manifold project, which is the container for the issue's content.",
+    "create_header": "Create Issue",
+    "volume_instructions": "Optionally, select a volume.",
+    "associated_project": "Associated $t(glossary.project_title_case_one)",
+    "project_instructions": "Issue content is stored in projects. Select an existing content or leave blank to create a new project.",
+    "update_issue": "$t(actions.update) $t(glossary.issue_title_case_one)",
+    "create_issue": "$t(actions.create) $t(glossary.issue_title_case_one)",
+    "forms": {
+      "number_label": "Issue Number",
+      "sort_number_label": "Issue Sort Number",
+      "sort_number_placeholder": "Enter sorting number",
+      "sort_number_instructions": "This field is only used to numerically sort issues in lists. If blank, Manifold will attempt to derive a number from the issue number.",
+      "volume_label": "$t(volumes.number)",
+      "volume_instructions": "Optionally, select a volume."
+    }
+  },
+  "volumes": {
+    "header": "Manage Volumes",
+    "add_button_label": "Add New Volume",
+    "create_header": "Create Volume",
+    "edit_header": "Edit Volume",
+    "slug_placeholder": "Enter Journal Volume Slug",
+    "update_volume": "Update Journal Volume",
+    "create_volume": "Create Journal Volume",
+    "number": "Volume Number",
+    "number_truncated": "Number",
+    "no_volume": "No Volume"
+  },
+  "access": {
+    "title": "Configure Access Restrictions",
+    "description": "Enable access restrictions and adjust messaging",
+    "restricted_label": "Journal Access is Restricted",
+    "open_access_label": "Journal is Open Access",
+    "notice_header_label": "Restricted Access Notice Header",
+    "notice_body_label": "Restricted Access Notice Body",
+    "notice_header_placeholder": "Access to this journal is restricted.",
+    "notice_body_placeholder": "Only users granted permission may view this journal's volumes and issues.",
+    "save": "Update Access Settings"
+  }
+}

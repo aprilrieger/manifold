@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`backend/components/twitter-query/Form matches the snapshot when rendered 1`] = `null`;

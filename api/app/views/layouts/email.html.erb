@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>A Manifold Email</title>
+  <link href="mail_styles.css" rel="stylesheet" />
+</head>
+
+<body>
+<table class="body" width="100%" align="center">
+  <tr>
+    <td>
+      <table class="container" width="700">
+        <tr class="header">
+          <td class="logo">
+            <img width="120" src="<%= @client_url %>/static/images/manifold-mail-logo-primary.jpg" alt="Manifold logo and text: Manifold"/>
+          </td>
+        </tr>
+        <tr>
+          <td align="left">
+            <% if @user %>
+              <p>
+                Hi <%= @user.nickname %>,
+              </p>
+            <% end %>
+            <%= yield %>
+            <p>
+              <%= simple_format @closing %>
+            </p>
+          </td>
+        </tr>
+        <% if @unsubscribe_token %>
+        <tr>
+          <td>
+            <a width="50%" href="<%= ClientURL.call(:subscriptions) %>">Manage Notification Settings</a> | <a width="50%" href="<%= ClientURL.call(:unsubscribe, token: @unsubscribe_token) %>">Unsubscribe All</a>
+          </td>
+        </tr>
+        <% end %>
+        <tr>
+          <td class="hr"></td>
+        </tr>
+        <tr>
+          <td>
+            <table class="footer-nav">
+              <tr>
+                <td class="logo">
+                  <a href="http://manifoldapp.org">
+                    <img width="163" src="<%= @client_url %>/static/images/manifold-mail-logo-secondary.jpg" alt="Manifold logo and text: Manifold Scholarship. Click to visit manifoldapp.org"/>
+                    Manifold logo and text: Manifold Scholarship. Click to visit manifoldapp.org
+                  </a>
+                </td>
+                <td class="external" width="71">
+                  <table>
+                    <tr>
+                      <td width="50%">
+                        <a href="https://twitter.com/manifoldscholar">
+                          <img width="21" src="<%= @client_url %>/static/images/manifold-mail-twitter.jpg" alt="Twitter logo. Click to visit Manifold on Twitter"/>
+                          Twitter logo. Click to visit Manifold on Twitter
+                        </a>
+                      </td>
+                      <td width="50%">
+                        <a href="https://github.com/ManifoldScholar/manifold">
+                          <img width="21" src="<%= @client_url %>/static/images/manifold-mail-github.jpg" alt="Github Logo. Click to visit Manifold Source on Github"/>
+                          Github Logo. Click to visit Manifold Source on Github
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

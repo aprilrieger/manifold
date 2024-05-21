@@ -1,0 +1,486 @@
+common: &1
+  :citation_styles:
+    :mla: "modern-language-association"
+    :chicago: "chicago-annotated-bibliography"
+    :apa: "apa"
+  :google:
+    :analytics_oauth_scope: "https://www.googleapis.com/auth/analytics.readonly"
+    :auth_uri: "https://accounts.google.com/o/oauth2/auth"
+    :token_uri: "https://accounts.google.com/o/oauth2/token"
+    :auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    :client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/"
+  :html_validator:
+    # The order of these transforms matters. They will be applied in the order listed here.
+    # So, you'll want a transform that changes an attribute value to be applied before
+    # that attribute is turned into a CSS property.
+    :attribute_transforms:
+      -
+        :name: "width"
+        :max: 650
+        :type: "max_value"
+      -
+        :name: "color"
+        :type: "css_map"
+      -
+        :name: "bgcolor"
+        :to: "background-color"
+        :type: "css_map"
+      -
+        :name: "align"
+        :to: "text-align"
+        :type: "css_map"
+      -
+        :name: "border"
+        :type: "measured_css_map"
+      -
+        :name: "width"
+        :type: "measured_css_map"
+      -
+        # SVG V2 image tags are weird.
+        :name: "xlink:href"
+        :to: "href"
+        :tag: "image"
+        :type: "attribute_name"
+      -
+        :name: "controls"
+        :to: true
+        :type: "attribute_value"
+      -
+        :name: "*"
+        :type: "namespaced"
+    :attribute_exclusions:
+      - "accept"
+      - "accept-charset"
+      - "accesskey"
+      - "async"
+      - "autofocus"
+      - "border"
+      - "bgcolor"
+      - "challenge"
+      - "charset"
+      - "code"
+      - "codebase"
+      - "color"
+      - "content"
+      - "contenteditable"
+      - "defer"
+      - "draggable"
+      - "dropzone"
+      - "height"
+      - "keytype"
+      - "language"
+      - "manifest"
+      - "required"
+      - "sandbox"
+      - "shape"
+      - "size"
+      - "sizes"
+      - "tabindex"
+      - "width"
+      - "align"
+    :attribute_exclusion_exceptions:
+      :iframe:
+        :allow:
+          - "height"
+          - "width"
+      :embed:
+        :allow:
+        - "height"
+        - "width"
+      :object:
+        :allow:
+        - "height"
+        - "width"
+  :css_validator:
+    :defaults: &defaults
+      :class_scope: ".manifold-text-section"
+      :id_scope: "#manifold-text-section"
+      :dark_scope: ".scheme-dark"
+      :allow_important: false
+      :selector_replace:
+        -
+          :match: !ruby/regexp '/(?<=\[)epub\|type(?=.*\])/'
+          :search: "|"
+          :replace: "-"
+      :value_maps:
+        -
+          :match: !ruby/regexp '/font-size/'
+          :entries:
+            - ["xx-small", ".7rem"]
+            - ["x-small", ".7rem"]
+            - ["small", ".8rem"]
+            - ["medium", "1rem"]
+            - ["large", "1.2rem"]
+            - ["x-large", "1.3rem"]
+            - ["xx-large", "1.3rem"]
+      :invertables:
+        :properties:
+          :include: ['color', 'background-color', 'border-color', 'border-right-color', 'border-left-color', 'border-top-color', 'border-bottom-color']
+      :exclusions:
+        :selectors: &selectors
+          # Strip most universal selectors (while allowing the *= operator)
+          - !ruby/regexp '/^\*$|\*:|\s\*$|\*\[/'
+          - !ruby/regexp '/^html/'
+          - !ruby/regexp '/^body/'
+          # All the fonts belong to Manifold
+          - !ruby/regexp '/@font-face/'
+          # CSS at rules are extracted before selectors are validated, so we exclude them as a selector.
+          - !ruby/regexp '/^@(.*);$/'
+        :properties:
+          -
+            :exclude: ['position', 'font-family', 'overflow', 'overflow-x', 'overflow-y', 'z-index', 'max-width', 'line-height', 'letter-spacing']
+          -
+            :condition:
+              :match: !ruby/regexp '/\d+pt|\d+px/'
+              :type: "value"
+            :exclude: ['font-size']
+          -
+            :condition:
+              :match: !ruby/regexp '/^400|normal$/'
+              :type: "value"
+            :exclude: ['font-weight']
+          -
+            :condition:
+              :match: !ruby/regexp '/^(h1|h2|h3|h4|h5|h6)$/i'
+              :type: "selector_tag"
+            :exclude: ['font-weight', 'size', 'font-size', 'line-height', 'margin', 'margin-top', 'margin-bottom', 'margin-left', 'margin-right', 'padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right']
+          -
+            :condition:
+              :match: !ruby/regexp '/^(p)$/i'
+              :type: "selector_tag"
+            :exclude: ['font-weight', 'size', 'font-size', 'line-height']
+          -
+            :condition:
+              :match: !ruby/regexp '/^div$/'
+              :type: "selector_tag"
+            :exclude: ['width']
+          -
+            :condition:
+              :match: !ruby/regexp '/^[a]$/'
+              :type: "selector_tag"
+            :exclude: ['color']
+    :ingested:
+      <<: *defaults
+    :user:
+      <<: *defaults
+      :allow_important: true
+      :exclusions:
+        :selectors: *selectors
+        :properties: []
+  :attachments:
+    :validations:
+      :csv:
+        :allowed_mime:
+          - text/csv
+          - text/plain
+          - application/octet-stream
+        :allowed_ext:
+          - csv
+      :ingestion:
+        :allowed_mime:
+          - text/markdown
+          - text/plain
+          - text/html
+          - text/yaml
+          - application/markdown
+          - text/x-web-markdown
+          - application/x-latex
+          - text/x-latex
+          - application/x-tex
+          - text/x-tex
+          - application/zip
+          - application/x-yaml
+          - application/epub+zip
+          - application/xhtml+xml
+          - application/msword
+          - application/vnd.ms-word.document.macroEnabled.12
+          - application/vnd.ms-word.template.macroEnabled.12
+          - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+          - application/vnd.openxmlformats-officedocument.wordprocessingml.template
+        :allowed_ext:
+          - md
+          - zip
+          - epub
+          - htm
+          - html
+          - docx
+          - yaml
+          - yml
+          - tex
+          - latex
+      :image:
+        :allowed_mime:
+          - image/jpeg
+          - image/jpg
+          - image/gif
+          - image/png
+          - image/svg+xml
+        :allowed_ext:
+          - gif
+          - jpg
+          - jpeg
+          - png
+          - svg
+      :favicon:
+        :allowed_mime:
+        - image/jpeg
+        - image/jpg
+        - image/gif
+        - image/png
+        - image/svg+xml
+        :allowed_ext:
+        - gif
+        - jpg
+        - jpeg
+        - png
+        - svg
+      :video:
+        :allowed_mime:
+          - video/x-flv
+          - video/mp4
+          - video/webm
+          - video/quicktime
+          - video/x-msvideo
+        :allowed_ext:
+          - mp4
+          - webm
+          - flv
+          - mov
+          - avi
+      :audio:
+        :allowed_mime:
+          - audio/ogg
+          - audio/wav
+          - audio/x-wav
+          - audio/mp3
+          - audio/mpeg
+          - video/x-flv
+          - video/mp4
+          - video/webm
+          - video/quicktime
+          - video/x-msvideo
+        :allowed_ext:
+          - flac
+          - mp3
+          - wav
+          - ogg
+          - oga
+      :spreadsheet:
+        :allowed_mime:
+          - application/vnd.ms-excel
+          - application/msexcel
+          - application/x-msexcel
+          - application/x-ms-excel
+          - application/x-excel
+          - application/x-dos_ms_excel
+          - application/xls
+          - application/x-xls
+          - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+          - application/vnd.oasis.opendocument.spreadsheet
+          - application/vnd.oasis.opendocument.spreadsheet-template
+          - application/zip
+          - text/csv
+        :allowed_ext:
+          - xls
+          - xlt
+          - xlm
+          - xlsx
+          - xlsm
+          - xltx
+          - xltm
+          - xlsb
+          - xla
+          - xlw
+          - csv
+          - ods
+          - ots
+      :text_document:
+        :allowed_mime:
+          - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+          - application/vnd.openxmlformats-officedocument.wordprocessingml.template
+          - application/msword
+          - application/vnd.ms-word.document.macroEnabled.12
+          - application/vnd.ms-word.template.macroEnabled.12
+          - application/rtf
+          - application/vnd.oasis.opendocument.text
+          - application/vnd.oasis.opendocument.text-template
+          - text/plain
+        :allowed_ext:
+          - doc
+          - docx
+          - docm
+          - dotx
+          - dotm
+          - docb
+          - odt
+          - ott
+          - txt
+          - rtf
+      :presentation:
+        :allowed_mime:
+          - application/zip # https://github.com/ManifoldScholar/manifold/issues/936
+          - application/vnd.ms-powerpoint
+          - application/vnd.openxmlformats-officedocument.presentationml.presentation
+          - application/vnd.openxmlformats-officedocument.presentationml.template
+          - application/vnd.openxmlformats-officedocument.presentationml.slideshow
+          - application/vnd.oasis.opendocument.presentation
+          - application/vnd.oasis.opendocument.presentation-template
+        :allowed_ext:
+          - ppt
+          - pptx
+          - pptm
+          - potx
+          - potm
+          - ppam
+          - ppsx
+          - ppsm
+          - sldx
+          - sldm
+          - odp
+          - otp
+      :pdf:
+        :allowed_mime:
+          - application/pdf
+        :allowed_ext:
+          - pdf
+      :resource:
+        :allowed_mime:
+          - application/octet-stream
+          - application/xhtml+xml
+          - application/x-dtbncx+xml
+          - application/vnd.ms-opentype
+          - application/font-woff
+          - application/smil+xml
+          - application/pls+xml
+          - application/xml
+          - application/pdf
+          - application/vnd.ms-powerpoint
+          - application/x-font-ttf
+          - application/x-font-truetype
+          - application/x-font-otf
+          - application/x-apple-diskimage
+          - application/x-bzip
+          - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+          - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+          - application/vnd.openxmlformats-officedocument.presentationml.presentation
+          - application/zip
+          - application/markdown
+          - application/epub+zip
+          - application/rtf
+          - application/vnd.oasis.opendocument.spreadsheet
+          - application/vnd.oasis.opendocument.text
+          - application/vnd.oasis.opendocument.presentation
+          - application/x-latex
+          - text/x-latex
+          - application/x-tex
+          - text/markdown
+          - text/x-web-markdown
+          - text/x-tex
+          - text/css
+          - text/csv
+          - text/html
+          - text/plain
+          - audio/ogg
+          - audio/wav
+          - audio/x-wav
+          - audio/mp3
+          - audio/mpeg
+          - video/x-flv
+          - video/mp4
+          - video/webm
+          - video/quicktime
+          - video/x-msvideo
+          - image/jpeg
+          - image/jpg
+          - image/gif
+          - image/png
+          - image/svg+xml
+        :allowed_ext:
+          # Image
+          - gif
+          - jpeg
+          - jpg
+          - png
+          - svg
+          # Video
+          - mp4
+          - webm
+          - flv
+          - mov
+          - avi
+          # Audio
+          - flac
+          - mp3
+          - wav
+          - ogg
+          - oga
+          # Spreadsheet
+          - xls
+          - xlt
+          - xlm
+          - xlsx
+          - xlsm
+          - xltx
+          - xltm
+          - xlsb
+          - xla
+          - xlw
+          - csv
+          - ods
+          - ots
+          # Document
+          - doc
+          - docx
+          - docm
+          - dotx
+          - dotm
+          - docb
+          - odt
+          - ott
+          - txt
+          - rtf
+          # Presentation
+          - ppt
+          - pptx
+          - pptm
+          - potx
+          - potm
+          - ppam
+          - ppsx
+          - ppsm
+          - sldx
+          - sldm
+          - odp
+          - otp
+          # File
+          - zip
+          - md
+          - epub
+          - pls
+          - ncx
+          - dmg
+          - mid
+          - wma
+          - wmv
+          - tex
+          - latex
+          # PDF
+          - pdf
+          # Misc
+          - tex
+          - latex
+          - js
+          - xhtml
+          - html
+          - htm
+          - ttf
+          - otf
+          - woff
+          - css
+          - xml
+          - smil
+          - yaml
+          - yml
+production: *1
+development: *1
+test: *1

@@ -1,0 +1,72 @@
+{
+  "messages": {
+    "empty_journal_heading": "This journal is currently empty.",
+    "empty_journal_body": "Add <0>volumes</0> or <1>issues</1> to see this page.",
+    "cannot_move_up": "Cannot move up. Item is already in the first category.",
+    "cannot_move_down": "Cannot move down. Item is already in the last category.",
+    "item_moved_category": "Item moved to category {{category}}",
+    "collected": "You collected {{title}}",
+    "uncollected": "You uncollected {{title}}",
+    "confirm": "Are you sure?",
+    "content_block_warning_heading": "This content block needs your attention before it can be displayed.",
+    "content_block_warning_note": "Note: This message is only visible to project editors.",
+    "showing_resource": "Showing {{type}} resource: {{title}}",
+    "unsaved_changes": "You may have unsaved changes. Do you want to leave without saving your changes?",
+    "no_results": "Sorry, no results were found.",
+    "no_sections": "This text doesn’t contain any sections.",
+    "annotation_summary": {
+      "highlight": "{{creator}} highlighted \"{{section}}\" in <text></text> on <date></date>.",
+      "annotation": "{{creator}} annotated \"{{section}}\" in <text></text> on <date></date>.",
+      "source": "\"{{section}}\" in <text></text>"
+    },
+    "reading_group": {
+      "privacy_change": {
+        "heading": "Confirm Privacy Change",
+        "private_to_public": "Changing this group from private to public will immediately make all annotations in the group visible to all readers. Are you sure you want to do this?",
+        "anonymous_to_public": "Changing this group from anonymous to public will immediately make all annotations in the group visible to all readers, and will reveal annotation authors. Are you sure you want to do this?",
+        "anonymous_to_private": "Changing this group from anonymous to private will reveal the identity of annotation authors. Are you sure you want to do this?"
+      },
+      "join": {
+        "heading": "Please Confirm",
+        "message": "You are about to join the <%= readingGroup.attributes.name %> reading group. Click yes to confirm.",
+        "join_not_found_heading": "Reading Group Not Found",
+        "join_not_found_message": "No reading groups match the code you entered. Please double check it and try again.",
+        "join_failure_heading": "Join Failed",
+        "join_failure_message": "Manifold couldn't add you to the reading group. Check and make sure you do not already belong to the group."
+      },
+      "destroy_heading": "Are you sure you want to delete this reading group?",
+      "destroy_message": "If the reading group is anonymous or private, all annotations within the group will be made private and only visible to the annotation creator. If the group is public, annotations will be public. This action can not be undone.",
+      "archive_heading": "Are you sure you want to archive this group?",
+      "archive_message": "This group’s annotations will be hidden for you in the reader. Groups can be reactivated at any time.",
+      "admin_warning": "Your admin privileges allow you to edit this group, but you are not a member."
+    },
+    "membership": {
+      "destroy_heading": "Are you sure you want to remove this user from the group?",
+      "destroy_message": "Pressing yes will remove the user from this group. The user's annotations will remain in the group.",
+      "leave_heading": "Are you sure you want to leave this reading group?",
+      "leave_message": "Pressing yes will remove you from this group. Your annotations will remain in the group until you edit and save them.",
+      "role_change": {
+        "heading": "Confirm Role Change",
+        "member_to_moderator": "Moderators can manage members and change group settings. Are you sure you want to do this?",
+        "moderator_to_member": "After this change, the user will no longer be able to manage members and group settings. Are you sure you want to do this?"
+      }
+    },
+    "project_authorization_warning": {
+      "heading": "Only authorized users may access this project.",
+      "body": "Only users granted permission may view this project's texts, resources, and other content."
+    },
+    "project_authorization_notice": {
+      "heading": "Access to this project is restricted.",
+      "body": "Only users granted permission may view this project's texts, resources, and other content."
+    },
+    "cookies_banner": {
+      "header": "Manifold uses cookies",
+      "body": "We use cookies to analyze our traffic. Please decide if you are willing to accept cookies from our website. You can change this setting anytime in <0>Privacy Settings</0>.",
+      "body_annonymous_user": "We use cookies to analyze our traffic. Please decide if you are willing to accept cookies from our website. If you'd like to update your settings on future visits, <0>create an account.</0>",
+      "settings_button_label": "Settings",
+      "accept_button_label": "Accept all",
+      "accept_label_truncated": "Accept",
+      "decline_button_label": "Decline all"
+    }
+  }
+}

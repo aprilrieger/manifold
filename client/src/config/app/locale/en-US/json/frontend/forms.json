@@ -1,0 +1,257 @@
+{
+  "forms": {
+    "add_to": "Add this to",
+    "my_starred_label": "My Starred",
+    "category": {
+      "create": "Create a new category",
+      "edit": "Edit category",
+      "name": "Category name",
+      "delete": "Delete category",
+      "name_placeholder": "Enter category name",
+      "description": "Category Description",
+      "description_placeholder": "Enter category description",
+      "description_instructions": "Enter a brief description of the category. This field accepts basic Markdown.",
+      "empty_placeholder": "Drag here to add"
+    },
+    "reading_group": {
+      "drawer_title": "New Reading Group",
+      "name": "Group Name",
+      "name_placeholder": "Pick a group name",
+      "privacy": "Privacy",
+      "privacy_instructions": "Annotations in public groups can be viewed by everyone. Annotations in private groups can only be viewed by group members. In anonymous groups, comments are private and only the group creator can see the identity of each annotation's author.",
+      "privacy_options": {
+        "public": "Public",
+        "private": "Private",
+        "anonymous": "Anonymous"
+      },
+      "invitation_code": "Invitation Code",
+      "invitation_code_buttons": {
+        "regenerate": "regenerate",
+        "copy": "copy"
+      },
+      "invitation_code_instructions": "Users can enter the invitation code on the \"Manage Reading Groups\" page to join this group. You may change this code at any time, but previous codes will no longer work",
+      "invitation_url": "Invitation URL",
+      "invitation_url_instructions": "The URL above is based on the invitation code. Readers can also join the group by visiting this URL.",
+      "invitation_url_button_label": "copy",
+      "course": "Course",
+      "course_instructions": "Course information is used for internal tracking and reporting purposes.",
+      "course_options": {
+        "yes": "Yes",
+        "no": "No"
+      },
+      "course_start_date": "Course Start Date:",
+      "course_end_date": "Course End Date:",
+      "notifications": "Notifications",
+      "notifications_instructions": "Email me when anyone joins this group"
+    },
+    "reading_group_member": {
+      "title": "Edit Group Member",
+      "name": "Member Name",
+      "role": "Role",
+      "role_instructions": "Members can see group annotations and annotate within the group. Moderators can manage members and update group settings.",
+      "role_options": {
+        "member": "Member",
+        "moderator": "Moderator"
+      },
+      "label": "Label",
+      "label_placeholder": "Enter a label",
+      "label_instructions": "Labels are used to describe specific members within the group and appear next to the name in the membership list.",
+      "annotation_style": "Annotation Style",
+      "annotation_style_instructions": "Annotation styles will appear in the Manifold reading interface and can be used to call differentiate a user's annotations from other annotations in the reading group.",
+      "annotation_style_options": {
+        "dashed": "Dashed",
+        "dotted": "Dotted",
+        "solid": "Solid",
+        "wavy": "Wavy"
+      },
+      "style_preview": "This is what your selected annotation style will look like when viewed in the reader. Font styling and sizing may be different depending on the settings in your visibility control panel."
+    },
+    "manage_group": {
+      "title": "Manage Group:",
+      "instructions": "Edit the Home Page or the settings for your Reading Group.",
+      "edit_homepage": "Edit Home Page:",
+      "edit_homepage_sr": "Edit group homepage",
+      "view_homepage": "View group homepage",
+      "edit_settings": "Edit settings"
+    },
+    "join_group": {
+      "title": "Join a group:",
+      "instructions": "To join a group, enter the code and select Join.",
+      "join_code": "Code to join",
+      "code_placeholder": "Enter code",
+      "button_label": "Join",
+      "confirm_button_label": "OK"
+    },
+    "edit_group": {
+      "title": "Edit Reading Group",
+      "duplicate": {
+        "label": "Duplicate",
+        "heading": "Create a copy of {{group}}",
+        "instructions": "This will create a copy of your reading group. Once copied, you will need to add users to the group.",
+        "group_name": "Reading Group Name",
+        "copy_annotations": "Copy my annotations",
+        "archive": "Archive copied group",
+        "open_after": "Open new group after duplication"
+      }
+    },
+    "contact": {
+      "title": "Send a Message",
+      "email": "Email",
+      "email_placeholder": "Email",
+      "name": "Name",
+      "name_placeholder": "Name",
+      "message": "Message",
+      "message_placeholder": "Message",
+      "button_label": "Send a Message"
+    },
+    "password_reset": {
+      "password": "Password",
+      "title": "Reset Password",
+      "new": "New Password",
+      "new_placeholder": "$t(forms.password_reset.password)",
+      "confirm": "Confirm Password",
+      "confirm_placeholder": "Confirm Password",
+      "submit_reset": "Reset Password",
+      "generate_password": "Generate new password",
+      "set_password": "Set new password",
+      "show": "Show password",
+      "hide": "Hide password",
+      "enter_password": "Enter a password"
+    },
+    "notifications": {
+      "title": "Notification Settings",
+      "instructions": "Edit your email notifications and subscriptions.",
+      "submit_label": "Save Changes",
+      "project_activity": "Project Activity",
+      "project_activity_instructions": "Manifold can send you a daily or weekly email with information about texts, resources, and resource collections that have been added to projects.",
+      "other_activity": "Other Activity",
+      "unsubscribe": "Unsubscribe from all",
+      "project_preferences": {
+        "frequency_label": "How often would you like to be notified?",
+        "never": "Never",
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "digest_projects_label": "Which projects should be included?",
+        "all_projects": "All $t(glossary.project_title_case_other)",
+        "only_starred": "Only Projects I've Starred",
+        "digest_comments_label": "Include New Comments and Annotations?"
+      },
+      "activity_preferences": {
+        "replies_to_me_label": "Notify you when someone replies to you?",
+        "replies_to_me_instructions": "Manifold will send you an email when a reply is posted to your annotations or comments.",
+        "project_comments_and_annotations_label": "Notify you of all Comments and Annotations?",
+        "project_comments_and_annotations_instructions": "Manifold will send you an email anytime a comment or annotation is created",
+        "flagged_resources_label": "Notify me when comments are flagged.",
+        "flagged_resources_instructions": "Anytime a user flags a comment, you will receive email notification."
+      }
+    },
+    "signin_overlay": {
+      "terms_and_conditions": "By creating this account, you agree to the <0>terms and conditions</0> of {{appName}}.",
+      "create_account": "$t(actions.create) Account",
+      "email": "Email",
+      "name": "Name",
+      "password": "Password",
+      "confirm_password": "Confirm $t(forms.signin_overlay.password)",
+      "confirm_new_password": "Confirm new $t(forms.signin_overlay.password)",
+      "reset_password": "Reset $t(forms.signin_overlay.password)",
+      "new_password": "New $t(forms.signin_overlay.password)",
+      "forgot_password": "Forgot your password?",
+      "remember_password": "Remember your password?",
+      "send_password_reset": "Send Password Reset Email",
+      "send_reset_success": "Email sent to {{email}} with instructions to reset your password.",
+      "oauth_instructions": "You can also create a {{appName}} account using your {{providers, list(style: long; type: conjunction;)}} credentials.",
+      "have_account": "Already have an account?",
+      "need_account": "Need to sign up?",
+      "log_in": "Log In",
+      "log_in_with_provider": "Log in with {{provider}}",
+      "log_out": "Log Out",
+      "current_user": "You are logged in as {{name}}.",
+      "sr_title": "Create/Manage Account",
+      "update_nickname": "Would you like to update your Nickname?",
+      "nickname": "Nickname",
+      "familiar_name": "Would you like me to call you something else?",
+      "profile_img": "Profile image",
+      "profile_img_instructions": "While you're here, why not upload a profile image?",
+      "remove_avatar": "Remove current avatar",
+      "upload_avatar_instructions": "<0>Upload a file</0> or <br/> drag and drop",
+      "edit_account": "Do you want to edit your account information?",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "update_sr_title": "Account Update",
+      "submit_update_label": "Save Changes",
+      "notification_settings": "Notification Settings",
+      "subscriptions__label": "Adjust your settings for email notifications:",
+      "create_success_message": "<0>Congratulations! </0><1>Your account has been successfully created and you are now logged in to Manifold. From now on, I'm going to call you </1><2>{{name}}</h4>",
+      "greeting": "Hello, <0>{{name}}</0>.",
+      "update_notification_header": "Profile updated successfully!",
+      "terms_header": "First things first...",
+      "accept_checkbox_label": "I agree to {{installationName}}'s <privacyLink>privacy policy</privacyLink> and <termsLink>terms and conditions.</termsLink>",
+      "accept_checkbox_label_truncated": "I agree to {{installationName}}'s <termsLink>terms and conditions.</termsLink>",
+      "not_verified_warning": "It looks like you haven't verified your email. You will not be able to engage publicly with projects or reading groups on Manifold until you do so.",
+      "trusted_not_verified_warning": "It looks like you haven't verified your email.",
+      "resend_verification": "Resend Verification Email",
+      "email_success_notification": "Verification email sent!",
+      "email_failure_notiication": "Verification email could not be sent. Please try again."
+    },
+    "attribute_map": {
+      "cancel": "Cancel mapping of {{name}} to {{mapping}}",
+      "placeholder": "Drag column...",
+      "auto_map": "Automatically Map Attributes",
+      "spreadsheet_cols": "Spreadsheet Columns",
+      "col_header_placeholder": "Column #{{num}}",
+      "available": "Available Attributes",
+      "instructions": "The column on the left side lists the column headers found in your spreadsheet. The column on the right lists the attributes that can be set on Manifold resources. Drag the attributes on the right to the corresponding columns on the left. Pressing the \"automatically map attributes\" button will attempt to automatically match the attributes with the spreadsheet columns."
+    },
+    "picker": {
+      "remove_all": "Remove All",
+      "add_all": "Add All",
+      "no_options": "No Options",
+      "clear_selection": "Clear selection",
+      "reset": "Reset"
+    },
+    "upload": {
+      "instructions": "<0>Upload a file</0> or <br/> drag and drop here <br/>",
+      "instructions_with_existing": "<0>Remove this file</0><br/>or <1>Upload a new file</1>",
+      "progress": "Uploading file to Manifold. <br/>{{percent}}% Complete.",
+      "image_preview": "<0>Remove this image</0><br/>or <1>Upload a new file</1>",
+      "image_preview_alt": "Upload preview"
+    },
+    "date_picker": {
+      "date_change_sr_status": "You entered {{date}}.",
+      "date_clear_sr_status": "You cleared the date."
+    },
+    "privacy": {
+      "title": "Privacy Settings",
+      "instructions": "Edit your privacy settings.",
+      "cookies": "Cookies",
+      "no_analytics_message": "{{name}} does not use cookies to track your activity.",
+      "internal_analytics": {
+        "label": "Internal Analytics",
+        "description": "Selecting yes will allow this site to set a VISIT_TOKEN & VISITOR_TOKEN for its anonymous internal analytics."
+      },
+      "google_analytics": {
+        "label": "Google Analytics",
+        "description": "Selecting yes will allow Google Analytics to record your anonymized interactions with the site. This helps us understand how this site is being used."
+      },
+      "submit_button": "Save Changes",
+      "account_data": "Account Data",
+      "download": {
+        "header": "Download your data",
+        "description": "Export a copy of your Manifold account data. Manifold will email you a link when the export is ready to download.",
+        "button_label": "Start Export"
+      },
+      "delete": {
+        "header": "Delete your account",
+        "description": "This will delete your entire account and any annotations you created from our database. Projects and texts that you created will not be deleted. It is not possible to recover deleted accounts so proceed with caution.",
+        "button_label": "Delete my account",
+        "confirm_header": "Are you sure you want to delete your account?",
+        "confirm_instructions": "Please enter your email to continue.",
+        "email_placeholder": "Email address",
+        "email_mismatch_error": "The email you entered doesn't match your account email",
+        "confirm_button_label": "Yes, delete my account",
+        "confirmation_body": "{{name}} and all its data has been removed from Manifold.",
+        "confirmation_header": "We're sorry to see you go!"
+      }
+    }
+  }
+}

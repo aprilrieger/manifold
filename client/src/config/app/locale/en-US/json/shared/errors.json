@@ -1,0 +1,40 @@
+{
+  "errors": {
+    "text_missing": "Text Missing",
+    "content_block": {
+      "no_contents": "Specify a text to <0>fix this block</0>.",
+      "no_activity": "No activity has been recorded for this project. This warning will disappear once there is project activity.",
+      "no_markdown": "Add Markdown content to <0>fix this block</0>.",
+      "no_texts": "<0>Add texts to the project</0> or <1>adjust the block configuration</1> to fix this block.",
+      "no_resources": "Add <0>resources</0> or <1>resource collections</1> to the project to fix this block.",
+      "no_metadata": "<0>Add project metadata</0> to fix this block.",
+      "default": "<0>Fix this content block.</0>"
+    },
+    "no_content": "No content provided.",
+    "video_playback": {
+      "heading": "Unable to play video.",
+      "body": "Your browser is not able to play this video.",
+      "download": "You may download it and play it locally using the download button below."
+    },
+    "audio_playback": "{{ error }}<br/>This audio file is not playable in your browser.<br/><br/>Click the download button to listen to the file on your device.",
+    "unauthorized": {
+      "heading": "Access Denied",
+      "body": "You must be logged in to manage notification preferences.",
+      "privacy_body": "You must be logged in to manage privacy settings."
+    },
+    "no_collapse_context": "Collapse components cannot be rendered outside the Collapse wrapper component.",
+    "color_scheme": "Manifold color scheme error!",
+    "fatal": {
+      "heading_line_one": "We're at a bit of a loose end.",
+      "heading_line_two": "Frightfully sorry.",
+      "dismiss_link": "Try again."
+    },
+    "logo_styles": "Error: Invalid press logo styles",
+    "upload_failed": "Upload failed. Please try again.",
+    "cookies_banner": "Sorry! There was an error saving your preferences. Please visit your settings to try again.",
+    "section_reorder": "There was an error updating the section order. This list has been reset.",
+    "toc_reorder": "There was an error updating the TOC order. This list has been reset",
+    "invalid_html_save": "HTML is invalid. Fix errors indicated in editor and try saving again.",
+    "invalid_html_switch": "HTML is invalid. Fix errors indicated in editor before switching to RTE mode."
+  }
+}
